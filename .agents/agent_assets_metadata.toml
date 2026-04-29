@@ -1,0 +1,62 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "ZO4LWEqo7AcnKzv3TTv1D"
+uri = "file://artifacts/muscle-town/src/assets/hero.png"
+type = "image"
+title = "Gritty gym interior hero"
+
+[[generated]]
+id = "5X7_Bs2eC1Dwu_u87j8My"
+uri = "file://artifacts/muscle-town/src/assets/trainer-1.png"
+type = "image"
+title = "Male strength trainer"
+
+[[generated]]
+id = "mqyAbOJVd4nXRLXMn3oak"
+uri = "file://artifacts/muscle-town/src/assets/trainer-2.png"
+type = "image"
+title = "Female crossfit trainer"
+
+[[generated]]
+id = "qMjaLSRhRcqvPEu55sk1B"
+uri = "file://artifacts/muscle-town/src/assets/trainer-3.png"
+type = "image"
+title = "Male bodybuilding trainer"
+
+[[generated]]
+id = "jm2HWEtXzXRlSDZ0bEq1U"
+uri = "file://artifacts/muscle-town/src/assets/gallery-1.png"
+type = "image"
+title = "Gym equipment dumbbells"
+
+[[generated]]
+id = "MLcViy-ynJcnWay8KEryj"
+uri = "file://artifacts/muscle-town/src/assets/gallery-2.png"
+type = "image"
+title = "Gym member deadlifting"
+
+[[generated]]
+id = "X6opHZH1vpDyTc70SkCQg"
+uri = "file://artifacts/muscle-town/src/assets/gallery-3.png"
+type = "image"
+title = "Gym interior squat racks"
+
+[[generated]]
+id = "yj8mm8MX3Amva0_a9aGMk"
+uri = "file://artifacts/muscle-town/src/assets/gallery-4.png"
+type = "image"
+title = "Battle ropes action"
+
+[[generated]]
+id = "U4DvZ62aCCsuTfEx6eFsX"
+uri = "file://artifacts/muscle-town/src/assets/transformation-1.png"
+type = "image"
+title = "Male transformation silhouette"
+
+[[generated]]
+id = "Zvh44qc7hme44P0nLjDVH"
+uri = "file://artifacts/muscle-town/src/assets/transformation-2.png"
+type = "image"
+title = "Female transformation silhouette"

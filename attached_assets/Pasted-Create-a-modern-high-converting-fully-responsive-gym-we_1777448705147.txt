@@ -1,0 +1,80 @@
+Create a modern, high-converting, fully responsive gym website for a fitness brand.
+
+🏋️ Gym Name: Muscle Town Fitness
+
+🎯 Objective:
+Design a visually powerful and conversion-focused website that helps attract more local customers, increase gym memberships, and build a premium brand image.
+
+📱 Reference Links:
+Instagram Page: https://www.instagram.com/muscle_town_fitness?igsh=MTB3NHQ0b25tcmtoMg%3D%3D
+Google About / Info: https://share.google/tvK7p6skkVAFWY2MU
+
+👉 Important Instructions:
+- Use images, reels, and videos from the Instagram page for real content
+- Extract brand tone, services, and vibe from Instagram & Google info
+- Make the website feel premium, energetic, and transformation-focused
+
+🎨 Design Style:
+- Dark theme
+- Modern glassmorphism + gradient effects
+- Smooth animations (scroll, hover, transitions)
+- Strong typography (bold, gym-style fonts)
+- Fully mobile responsive
+
+🧩 Required Pages & Sections:
+
+1. 🏠 Home Page
+   - Hero section with strong tagline (e.g., "Transform Your Body at Muscle Town")
+   - CTA buttons: Join Now / Book Trial
+   - Highlights: equipment, trainers, environment
+   - Instagram reel/video integration
+   - Testimonials / transformation stories
+
+2. 🏋️ About Us
+   - Gym introduction (use Google + Instagram content)
+   - Vision & mission
+   - Why choose Muscle Town (equipment, trainers, ambience, results)
+
+3. 💪 Services / Programs
+   - Strength Training
+   - CrossFit
+   - Cardio & Fat Loss
+   - Yoga / Aerobics
+   - Personal Training
+   - Nutrition Guidance
+
+4. 📸 Gallery
+   - Instagram feed integration (auto-fetch or manual grid)
+   - Photos of gym, clients, transformations
+
+5. 💰 Membership Plans
+   - Pricing cards (monthly / quarterly / yearly)
+   - CTA: Join Now / Contact
+
+6. 📞 Contact Page
+   - Phone numbers
+   - Location map (embed Google Maps)
+   - WhatsApp button (floating)
+   - Inquiry form
+
+7. 🔥 Extra Features (IMPORTANT for conversion)
+   - Sticky navbar
+   - Floating "Join Now" CTA button
+   - WhatsApp chat integration
+   - Testimonials slider
+   - Before/After transformation section
+   - Trainer profiles (if available)
+
+⚙️ Tech Requirements:
+- Use modern stack (MERN+ Tailwind CSS preferred)
+- Clean and structured code
+- SEO optimized (meta tags, keywords like "gym near me", "fitness gym in [city]")
+- Fast loading performance
+
+🎯 Goal:
+The website should look premium enough that the gym owner feels it's worth paying for, and users feel motivated to join instantly.
+
+Deliver:
+- Complete frontend code (and backend if needed)
+- Clean folder structure
+- Ready-to-deploy project
