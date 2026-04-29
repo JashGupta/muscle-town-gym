@@ -2,7 +2,7 @@
 
 ## Overview
 
-pnpm workspace monorepo using TypeScript. Each package manages its own dependencies.
+pnpm workspace monorepo using TypeScript. Hosts the Muscle Town Fitness marketing website.
 
 ## Stack
 
@@ -10,18 +10,27 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **Node.js version**: 24
 - **Package manager**: pnpm
 - **TypeScript version**: 5.9
-- **API framework**: Express 5
-- **Database**: PostgreSQL + Drizzle ORM
-- **Validation**: Zod (`zod/v4`), `drizzle-zod`
-- **API codegen**: Orval (from OpenAPI spec)
-- **Build**: esbuild (CJS bundle)
+- **Frontend**: React + Vite + Tailwind CSS + shadcn/ui + Framer Motion
+
+## Artifacts
+
+- `artifacts/muscle-town` — Muscle Town Fitness marketing site (frontend-only, served at `/`)
+- `artifacts/mockup-sandbox` — Internal canvas/mockup sandbox
+
+## Contact form
+
+The Contact section in `artifacts/muscle-town/src/components/sections/Contact.tsx`
+posts inquiries to FormSubmit, which forwards them to the gym owner's email.
+The owner address is set via the `OWNER_EMAIL` constant at the top of that file.
+On the very first submission to a new email address, FormSubmit sends a
+one-time confirmation link that the owner must click; afterwards every
+submission lands directly in the inbox. No backend required.
 
 ## Key Commands
 
-- `pnpm run typecheck` — full typecheck across all packages
+- `pnpm install` — install dependencies
+- `pnpm run typecheck` — typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- `pnpm --filter @workspace/api-server run dev` — run API server locally
+- `pnpm --filter @workspace/muscle-town run dev` — run the website locally
 
-See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details.
+See the `pnpm-workspace` skill for workspace structure and conventions.
