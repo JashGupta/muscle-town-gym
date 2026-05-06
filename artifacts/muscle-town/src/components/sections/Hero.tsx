@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
     >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
@@ -26,31 +26,40 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <span className="inline-block py-1 px-3 rounded-full bg-primary/20 text-primary border border-primary/30 text-sm font-semibold tracking-widest uppercase mb-6">
-              Premium Training Facility in Bengaluru
+            <span className="inline-block py-1 px-3 rounded-full bg-primary/20 text-primary border border-primary/30 text-xs md:text-sm font-semibold tracking-widest uppercase mb-6">
+              Premium Training Facility in Kalka
             </span>
-            <h1 className="font-display text-6xl md:text-8xl lg:text-9xl leading-[0.85] text-white mb-6 uppercase">
+            <h1 className="font-display text-6xl md:text-7xl lg:text-9xl leading-[0.95] text-white mb-6 uppercase">
               Transform <span className="text-primary block">Your Body.</span>
-              <span className="block mt-2">Forge Your Mind.</span>
+              <span className="block mt-2 text-5xl md:text-6xl">Forge Your Mind.</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-xl font-medium leading-relaxed">
-              Step into the most gritty, energetic, and powerful gym in town. Heavy iron, 
-              expert coaching, and a community built on hard work and real results.
+            <p className="text-xs md:text-lg text-gray-300 mb-10 max-w-2xl font-medium leading-relaxed tracking-tight">
+              This isn't a comfort zone. It's where limits get shattered,
+              discipline is built, and bodies are forged through pure grit and
+              consistency.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="font-display text-xl tracking-widest h-14 px-8"
-                onClick={() => document.querySelector('#pricing')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() =>
+                  document
+                    .querySelector("#pricing")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
               >
                 JOIN NOW
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="font-display text-xl tracking-widest h-14 px-8 border-2 hover:bg-white/10"
-                onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() =>
+                  document
+                    .querySelector("#contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
               >
                 BOOK FREE TRIAL
               </Button>
@@ -60,13 +69,15 @@ export function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div 
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
+      <motion.div
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 hidden md:flex"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
       >
-        <span className="text-xs uppercase tracking-widest text-gray-400 font-semibold">Scroll</span>
+        <span className="text-xs uppercase tracking-widest text-gray-400 font-semibold">
+          Scroll
+        </span>
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 1.5 }}

@@ -5,98 +5,94 @@ const services = [
   {
     icon: Flame,
     title: "Strength Training",
-    description: "Build raw power and muscle mass with our extensive collection of free weights, power racks, and plate-loaded machines."
+    description: "Heavy iron, real gains. Build size, power, and dominance."
   },
   {
     icon: Crosshair,
     title: "CrossFit",
-    description: "High-intensity functional movements designed to improve your overall fitness, endurance, and athletic performance."
+    description: "Explosive workouts designed for strength, speed, and endurance."
   },
   {
     icon: Activity,
-    title: "Cardio & Fat Loss",
-    description: "Melt fat and boost stamina with our top-tier cardio equipment and high-energy HIIT group sessions."
+    title: "Fat Loss",
+    description: "Burn fat, boost stamina, and stay lean with intense sessions."
   },
   {
     icon: Sparkles,
-    title: "Yoga & Mobility",
-    description: "Enhance flexibility, core strength, and recovery with guided yoga and mobility classes."
+    title: "Mobility & Yoga",
+    description: "Recover better, move freely, and stay injury-free."
   },
   {
     icon: HeartPulse,
     title: "Personal Training",
-    description: "1-on-1 coaching tailored to your exact goals, body type, and fitness level for maximum results."
+    description: "Custom coaching built around your body and your goals."
   },
   {
     icon: Salad,
-    title: "Nutrition Guidance",
-    description: "Fuel your transformation with custom meal plans and nutritional advice from certified experts."
+    title: "Nutrition Plans",
+    description: "Eat smart, fuel right, and maximize every workout."
   }
 ];
 
 export function Services() {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 }
-    }
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-  };
-
   return (
-    <section id="services" className="py-24 bg-zinc-950 relative">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+    <section id="services" className="py-20 md:py-28 bg-zinc-950 relative overflow-hidden">
+      
+      {/* subtle background glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/10 blur-[120px] opacity-40"></div>
+
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
+        
+        {/* HEADER */}
+        <div className="text-center max-w-2xl mx-auto mb-14 md:mb-20">
           <motion.h2 
-            className="font-display text-4xl md:text-6xl text-white mb-6 uppercase"
-            initial={{ opacity: 0, y: 20 }}
+            className="font-display text-5xl lg:text-6xl text-white mb-5 uppercase leading-tight"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            How We <span className="text-primary">Build Beasts</span>
+            Built to <span className="text-primary">Transform You</span>
           </motion.h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          <motion.p 
-            className="text-gray-400 text-lg"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            Choose your weapon. We offer a full spectrum of training disciplines to match your goals, whether that's lifting heavier, running faster, or moving better.
-          </motion.p>
+
+          <p className="text-gray-400 text-sm sm:text-base md:text-lg">
+            Everything you need to get stronger, leaner, and better—under one roof.
+          </p>
         </div>
 
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-50px" }}
-        >
+        {/* GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {services.map((service, index) => (
             <motion.div 
-              key={index} 
-              variants={item}
-              className="bg-black border border-white/5 p-8 rounded-xl hover:border-primary/50 transition-colors group cursor-default"
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.08 }}
+              className="group relative bg-black/60 border border-white/10 p-6 sm:p-7 rounded-2xl hover:border-primary/60 transition-all duration-300"
             >
-              <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                <service.icon className="w-7 h-7 text-primary group-hover:text-white transition-colors" />
+              {/* hover glow */}
+              <div className="absolute inset-0 rounded-2xl bg-primary/5 opacity-0 group-hover:opacity-100 transition"></div>
+
+              {/* icon */}
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-primary transition-all duration-300">
+                <service.icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary group-hover:text-white transition" />
               </div>
-              <h3 className="font-display text-2xl text-white uppercase tracking-wider mb-3">
+
+              {/* title */}
+              <h3 className="font-display text-lg sm:text-xl md:text-2xl text-white uppercase tracking-wide mb-2">
                 {service.title}
               </h3>
-              <p className="text-gray-400 leading-relaxed">
+
+              {/* description */}
+              <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
                 {service.description}
               </p>
+
+              {/* bottom line accent */}
+              <div className="mt-5 h-[2px] w-0 bg-primary group-hover:w-full transition-all duration-300"></div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

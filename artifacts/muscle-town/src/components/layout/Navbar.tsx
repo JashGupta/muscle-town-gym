@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
-import { Menu, X, Dumbbell } from "lucide-react";
+import { Menu, Dumbbell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
@@ -20,35 +19,46 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 40);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // ✅ FIXED scroll (with offset)
   const scrollToSection = (href: string) => {
-    setIsOpen(false);
     const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    if (!element) return;
+
+    // 1. Close menu FIRST
+    setIsOpen(false);
+
+    // 2. Delay scroll (IMPORTANT FIX)
+    setTimeout(() => {
+      const yOffset = -60;
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }, 300); // wait for sheet animation
   };
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-white/10 shadow-lg py-3"
-          : "bg-transparent py-5"
+          ? "bg-black/80 backdrop-blur-lg border-b border-white/10 py-3"
+          : "bg-transparent py-4"
       }`}
     >
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
+        {/* Logo */}
         <button
           onClick={() => scrollToSection("#hero")}
-          className="flex items-center gap-2 text-primary font-display text-2xl tracking-wider hover:opacity-80 transition-opacity"
+          className="flex items-center gap-2 text-primary font-display tracking-wide"
         >
-          <Dumbbell className="w-8 h-8" />
-          <span>MUSCLE TOWN</span>
+          <Dumbbell className="w-6 h-6 sm:w-7 sm:h-7" />
+          <span className="text-lg sm:text-xl md:text-2xl">MUSCLE TOWN</span>
         </button>
 
         {/* Desktop Nav */}
@@ -58,14 +68,18 @@ export function Navbar() {
               <li key={link.name}>
                 <button
                   onClick={() => scrollToSection(link.href)}
-                  className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors uppercase tracking-wider"
+                  className="text-sm font-medium text-white/80 hover:text-primary transition uppercase tracking-wider"
                 >
                   {link.name}
                 </button>
               </li>
             ))}
           </ul>
-          <Button onClick={() => scrollToSection("#pricing")} className="font-display tracking-widest text-lg px-8">
+
+          <Button
+            onClick={() => scrollToSection("#pricing")}
+            className="px-6 py-2"
+          >
             JOIN NOW
           </Button>
         </nav>
@@ -74,22 +88,30 @@ export function Navbar() {
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-foreground">
+              <Button variant="ghost" size="icon" className="w-10 h-10">
                 <Menu className="w-6 h-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-background/95 backdrop-blur-xl border-white/10 w-[300px] flex flex-col pt-16">
-              <nav className="flex flex-col gap-6 items-center">
+
+            <SheetContent
+              side="right"
+              className="bg-black/95 backdrop-blur-xl border-white/10 w-[85%] max-w-[320px] pt-16"
+            >
+              <nav className="flex flex-col gap-2">
                 {navLinks.map((link) => (
                   <button
                     key={link.name}
                     onClick={() => scrollToSection(link.href)}
-                    className="text-lg font-medium text-foreground hover:text-primary transition-colors uppercase tracking-wider w-full py-2 text-center"
+                    className="text-left text-base font-medium text-white hover:text-primary transition uppercase tracking-wider py-4 border-b border-white/5"
                   >
                     {link.name}
                   </button>
                 ))}
-                <Button onClick={() => scrollToSection("#pricing")} className="font-display tracking-widest text-xl px-8 w-full mt-4">
+
+                <Button
+                  onClick={() => scrollToSection("#pricing")}
+                  className="mt-6 w-full py-3 text-base"
+                >
                   JOIN NOW
                 </Button>
               </nav>
