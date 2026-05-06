@@ -139,7 +139,7 @@ export function Footer() {
           </p>
 
           <p className="text-gray-600 text-xs sm:text-sm">
-            Crafted by{" "}
+            Website by{" "}
             <a
               href="https://www.instagram.com/jash.gpt/"
               target="_blank"
